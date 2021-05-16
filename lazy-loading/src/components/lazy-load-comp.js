@@ -1,3 +1,5 @@
+import React from 'react';
+
 function LazyComponent() {
   return (
     <div className="lazy-comp">

@@ -1,3 +1,5 @@
+import React from 'react';
+
 function RouteLazyComp2(){
   return (
     <div className="route-lazy-comp2">
