@@ -1,11 +1,12 @@
 import React from 'react';
 
-const Userone = (props) => {
-  console.log(props);
+const Userone = ({firstName, lastName, children}) => {
+  // console.log(props);
+  // const {firstName, lastName, children} = props;
   return (
     <div>
-      <h4>Welcome Mr.{props.firstName} {props.lastName}</h4>
-      {props.children}
+      <h4>Welcome Mr.{firstName} {lastName}</h4>
+      {children}
     </div>
   )
 }
