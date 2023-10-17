@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useMemo} from 'react';
+import React, {useState, useMemo, useCallback} from 'react';
 import Factorial from './Factorial';
 
 const Counter = () => {
@@ -7,7 +7,6 @@ const Counter = () => {
   const [number, setNumber] = useState(1);
 
   const increaseFive = () => {
-    console.log('increment five');
     for(let i=0; i < 5; i++){
       setCount(prevState => prevState + 1);
     }
@@ -29,13 +28,13 @@ const Counter = () => {
   // const factorial = factorialOf(number);
   const factorial = useMemo(() => factorialOf(number), [number]);
 
-  const updateNumber = (e) => {
-    setNumber(e.target.value);
-  }
-
-  // const updateNumber = useCallback((e) => {
+  // const updateNumber = (e) => {
   //   setNumber(e.target.value);
-  // },[number]);
+  // }
+
+  const updateNumber = useCallback((e) => {
+    setNumber(e.target.value);
+  },[number]);
 
   return (
     <div>
@@ -49,7 +48,7 @@ const Counter = () => {
       <p>firstName value is: {person.firstName}</p>
       <p>lastName value is: {person.lastName}</p>
       <hr />
-      <Factorial factorial={factorial} updateNumber={updateNumber} />
+      <Factorial factorial={factorial} updateNumber={updateNumber}/>
       {/* <p>Find the factorial of the given number</p>
       <input type="text" placeholder="Enter the number" onChange={(e) => {setNumber(e.target.value)}} /><br />
       <span>Factorial of the given number is {factorial}</span> */}
