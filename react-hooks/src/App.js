@@ -5,7 +5,9 @@ import './App.css';
 // import Counter from './use_callback/Counter';
 // import Home from './use_custom_hook/home';
 // import Stopwatch from './use_reducer/stopWatch';
-import Example2 from './use_context/Example2';
+// import Example2 from './use_context/Example2';
+// import Transition from './use_transition/Transition';
+import Demo from './use_defferedvalue/index';
 
 function App() {
   return (
@@ -15,7 +17,9 @@ function App() {
       {/* <StyleElement /> */}
       {/* <Home /> */}
       {/* <Stopwatch /> */}
-      <Example2 />
+      {/* <Example2 /> */}
+      {/* <Transition /> */}
+      <Demo />
     </div>
   );
 }

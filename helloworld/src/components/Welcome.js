@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 // function Welcome() {
 //   return (
@@ -10,6 +10,9 @@ import React from 'react';
 // }
 
 const Welcome = () => {
+
+  useState()
+
   return (
     <div className="welcome">
       <h1>Functional Component Example</h1>
