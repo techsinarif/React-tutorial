@@ -1,7 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useDebugValue } from "react";
 
 const useFetch = (url) => {
   const [data, setData] = useState(null);
+
+  useDebugValue("Fetches data from given api");
 
   useEffect(() => {
     fetch(url)

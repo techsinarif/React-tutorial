@@ -7,7 +7,9 @@ import './App.css';
 // import Stopwatch from './use_reducer/stopWatch';
 // import Example2 from './use_context/Example2';
 // import Transition from './use_transition/Transition';
-import Demo from './use_defferedvalue/index';
+// import Demo from './use_defferedvalue/index';
+// import DemoApp from './use_imperativeHandle/index';
+import LayoutEffect from './use_layouteffect/LayoutEffect'
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
       {/* <Stopwatch /> */}
       {/* <Example2 /> */}
       {/* <Transition /> */}
-      <Demo />
+      {/* <Demo /> */}
+      {/* <DemoApp /> */}
+      <LayoutEffect />
     </div>
   );
 }
