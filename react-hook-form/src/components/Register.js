@@ -2,7 +2,16 @@ import {useForm} from 'react-hook-form';
 import "./register.css";
 
 const Register = () => {
-  const form = useForm();
+  const form = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      address: {
+        street1: "",
+        street2: ""
+      }
+    }
+  });
   const {register, handleSubmit, formState, watch} = form;
   const {errors} = formState;
 
@@ -32,23 +41,12 @@ const Register = () => {
         }})} placeholder="Enter your email" />
         <p className='error'>{errors.email?.message}</p>
 
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" {...register("password", {required: {
-          value: true,
-          message: "Your password is required"
-        }})} placeholder="Enter your password" />
-        <p className='error'>{errors.password?.message}</p>
+        <label htmlFor="street1">Street1</label>
+        <input type="text" id="street1" {...register("address.street1")} placeholder="Enter your Street" />
 
-        <label htmlFor="confirmPassword">Confirm Password</label>
-        <input type="password" id="confirmPassword" {...register("confirmPassword", {required : {
-          value: true,
-          message: "Confirm password is required"
-        }, validate: (fieldValue) => {
-          if(fieldValue !== watch("password")){
-            return "Password does not match!"
-          }
-        }})} placeholder="Confirm your password" />
-        <p className='error'>{errors.confirmPassword?.message}</p>
+        <label htmlFor="street2">Street2(optional)</label>
+        <input type="text" id="street2" {...register("address.street2")} placeholder="Enter your Street" />
+        
 
         <button type="submit">Register now</button>
       </form>
